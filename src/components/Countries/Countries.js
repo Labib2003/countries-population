@@ -10,10 +10,11 @@ const Countries = (props) => {
             <div className='grid grid-cols-3 gap-3'>
                 {
                     countries.map(country => <Country
-                        country={country}
                         key={country.numericCode}
+                        country={country}
                         addToSelection={addToSelection}
-                    ></Country>)
+                    >
+                    </Country>)
                 }
             </div>
         </div>
