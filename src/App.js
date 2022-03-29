@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import './App.css';
 import Countries from './components/Countries/Countries';
+import Graph from './components/Graph/Graph';
 import SelectedCountries from './components/SelectedCountries/SelectedCountries';
 
 function App() {
@@ -39,11 +40,16 @@ function App() {
 
   return (
     <div className="App w-4/5 mx-auto">
-      <SelectedCountries
+      <SelectedCountries 
         selectedCountries={selectedCountries}
         removeFromSelection={removeFromSelection}
       >
       </SelectedCountries>
+      <br />
+      <Graph 
+        selectedCountries={selectedCountries}
+      >
+      </Graph>
       <Countries
         countries={countries}
         addToSelection={addToSelection}
