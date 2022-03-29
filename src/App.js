@@ -16,16 +16,27 @@ function App() {
   const [selectedCountries, setSelectedCountries] = useState([]);
 
   const addToSelection = (numericCode) => {
-    const newSelectedCountry = countries.find(countrie => countrie.numericCode === numericCode);
-    const newSelectedCountries = [...selectedCountries, newSelectedCountry];
-    setSelectedCountries(newSelectedCountries);
+    const exists = selectedCountries.find(selectedCountry => selectedCountry.numericCode === numericCode);
+    if(exists){
+      alert('Cant add duplicates');
+      return;
+    }
+    if (selectedCountries.length > 9) {
+      alert('cant add more than 10');
+      return;
+    }
+    else {
+      const newSelectedCountry = countries.find(countrie => countrie.numericCode === numericCode);
+      const newSelectedCountries = [...selectedCountries, newSelectedCountry];
+      setSelectedCountries(newSelectedCountries);
+    }
   }
   return (
     <div className="App w-4/5 mx-auto">
       <SelectedCountries selectedCountries={selectedCountries}></SelectedCountries>
-      <Countries 
-      countries={countries} 
-      addToSelection={addToSelection}
+      <Countries
+        countries={countries}
+        addToSelection={addToSelection}
       ></Countries>
     </div>
   );
