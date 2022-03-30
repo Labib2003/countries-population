@@ -46,11 +46,14 @@ function App() {
         >
         </Countries>
       </div>
-      <GraphAndList
-        selectedCountries={selectedCountries}
-        removeFromSelection={removeFromSelection}
-      >
-      </GraphAndList>
+      <div>
+        <GraphAndList
+          className='sticky top-0'
+          selectedCountries={selectedCountries}
+          removeFromSelection={removeFromSelection}
+        >
+        </GraphAndList>
+      </div>
     </div>
   );
 }

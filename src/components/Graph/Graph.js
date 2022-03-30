@@ -5,6 +5,7 @@ const Graph = (props) => {
     const selectedCountries = props.selectedCountries;
     return (
         <div>
+            <p>Graph of populaion</p>
             <BarChart width={500} height={500} data={selectedCountries}>
                 <XAxis dataKey='name'></XAxis>
                 <YAxis></YAxis>

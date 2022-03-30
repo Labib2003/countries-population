@@ -6,7 +6,7 @@ const SelectedCountry = (props) => {
     const removeFromSelection = props.removeFromSelection;
     return (
         <div className='flex'>
-            <img className='h-10 w-10 rounded-full' src={flags.svg} alt="" />
+            <img className='object-contain w-10 rounded-full' src={flags.svg} alt="" />
             <XIcon
                 onClick={() => { removeFromSelection(numericCode) }}
                 className='h-10 text-red-500 hover:text-red-700'
