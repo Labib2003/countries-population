@@ -1,8 +1,7 @@
 import { useEffect, useState } from 'react';
 import './App.css';
 import Countries from './components/Countries/Countries';
-import Graph from './components/Graph/Graph';
-import SelectedCountries from './components/SelectedCountries/SelectedCountries';
+import GraphAndList from './components/GraphAndList/GraphAndList';
 
 function App() {
   //loading country data from api
@@ -39,22 +38,19 @@ function App() {
   }
 
   return (
-    <div className="App w-4/5 mx-auto">
-      <SelectedCountries 
+    <div className="App w-4/5 mx-auto flex">
+      <div className='mr-5'>
+        <Countries
+          countries={countries}
+          addToSelection={addToSelection}
+        >
+        </Countries>
+      </div>
+      <GraphAndList
         selectedCountries={selectedCountries}
         removeFromSelection={removeFromSelection}
       >
-      </SelectedCountries>
-      <br />
-      <Graph 
-        selectedCountries={selectedCountries}
-      >
-      </Graph>
-      <Countries
-        countries={countries}
-        addToSelection={addToSelection}
-      >
-      </Countries>
+      </GraphAndList>
     </div>
   );
 }
